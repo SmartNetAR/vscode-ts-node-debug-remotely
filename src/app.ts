@@ -1,8 +1,11 @@
-const express = require('express')
+import * as express from 'express';
 const app = express()
 
 app.get('/', function(req, res){
-  res.send('hello world')
+  let a = 17;
+  a += 4;
+  const calculator = 3 + a;
+  res.send({calculator})
 })
 
 app.listen(3000)

@@ -1,4 +1,4 @@
-FROM node:lts-jessie
+FROM node:16-stretch
 
 WORKDIR /app
 
