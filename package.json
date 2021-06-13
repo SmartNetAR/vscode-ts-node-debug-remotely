@@ -6,14 +6,22 @@
   "repository": "git@github.com:MitsuhideOhi/vscode-ts-node-debug-remotely.git",
   "license": "CC0-1.0",
   "scripts": {
-    "debug": "node -r ts-node/register --inspect=0.0.0.0:9229 src/app.ts"
+    "debug": "node -r ts-node/register --inspect=0.0.0.0:9229 src/app.ts",
+    "dev": "nodemon --inspect=0.0.0.0:9229 src/app.ts"
+
+  },
+  "nodemonConfig": {
+    "execMap": {
+      "ts": "node --require ts-node/register/transpile-only"
+    }
   },
   "dependencies": {
-    "express": "4.16.4"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "ts-node": "8.1.0",
-    "typescript": "3.4.5",
-    "@types/express": "4.16.1"
+    "@types/express": "^4.17.11",
+    "nodemon": "^2.0.7",
+    "ts-node": "^8.9.1",
+    "typescript": "^4.2.4"
   }
 }

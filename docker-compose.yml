@@ -5,10 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: node_1
-    command: yarn debug
+    entrypoint: bash dev.build.sh
     ports:
-      - 3000:3000
+      - 8089:8089
       - 9229:9229
     tty: true
+    working_dir: /app
     volumes:
-      - ./src:/app/src
+      - .:/app:cached

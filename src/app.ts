@@ -1,11 +1,13 @@
 import * as express from 'express';
-const app = express()
+import { YEAR } from './constants';
+const app = express();
+const port = process.env.SERVER_PORT || 8089;
 
 app.get('/', function(req, res){
-  let a = 17;
-  a += 4;
+  let a = YEAR;
+  a += 30;
   const calculator = 3 + a;
   res.send({calculator})
 })
 
-app.listen(3000)
+app.listen(port, ()=> console.log(`listening on port ${port}`))

@@ -12,7 +12,10 @@
       "address": "localhost",
       "sourceMapPathOverrides": {
         "/app/*": "${workspaceRoot}/*"
-      }
+      },
+      "skipFiles": [
+        "<node_interlan>/**"
+      ]
     }
   ]
 }
